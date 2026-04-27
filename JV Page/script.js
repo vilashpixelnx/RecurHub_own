@@ -230,7 +230,7 @@ if (faqList) {
         <span>${item.q}</span>
         <span class="faq-icon">${FAQ_ICON_PLUS}</span>
       </button>
-      <div class="faq-a">${item.a}</div>
+      <div class="faq-a"><div class="faq-a-inner">${item.a}</div></div>
     `;
     faqList.appendChild(el);
   });
@@ -246,14 +246,51 @@ function toggleFaq(btn) {
   if (!isOpen) {
     btn.setAttribute('aria-expanded', 'true');
     btn.querySelector('.faq-icon').innerHTML = FAQ_ICON_CLOSE;
-    btn.nextElementSibling.style.maxHeight = btn.nextElementSibling.scrollHeight + 'px';
+    const answer = btn.nextElementSibling;
+    requestAnimationFrame(() => {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    });
   }
 }
 
 // ── STICKY NAV ──
 const navbar = document.getElementById('navbar');
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.getElementById('nav-links');
+
+function closeNavMenu() {
+  navbar.classList.remove('nav-open');
+  if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+}
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navbar.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 992) closeNavMenu();
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!navbar.classList.contains('nav-open')) return;
+    if (!navbar.contains(event.target)) closeNavMenu();
+  });
+}
+
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 992) closeNavMenu();
+});
+
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeNavMenu();
 });
 
 // ── TOAST ──
