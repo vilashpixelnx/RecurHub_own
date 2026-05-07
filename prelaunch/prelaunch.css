@@ -1054,7 +1054,7 @@ input, textarea { font-family: inherit; }
 /* ══════════════════════════════════════════════════════════════
    2 · STATS — LIGHT
    ══════════════════════════════════════════════════════════════ */
-.stats-section { padding: 100px 0; }
+.stats-section { padding: 80px 0; }
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1094,7 +1094,7 @@ input, textarea { font-family: inherit; }
 }
 .stat-num {
   font-family: var(--font-h);
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 900;
   line-height: 1;
   margin-bottom: 12px;
@@ -1106,7 +1106,7 @@ input, textarea { font-family: inherit; }
    3 · PROBLEM — DARK
    ══════════════════════════════════════════════════════════════ */
 .problem-section {
-    padding: 100px 0;
+    padding: 80px 0;
     background: #fff;
 }
 .problem-section .container-fluid {
@@ -1526,7 +1526,7 @@ input, textarea { font-family: inherit; }
     background: url(./assets/sub-head-bg.svg);
     background-repeat: no-repeat;
     background-size: cover;
-    font-size: clamp(11px, 2vw, 20px);
+    font-size: clamp(12px, 2vw, 20px);
     font-weight: 600;
       color: var(--text);
 }
@@ -1831,7 +1831,6 @@ input, textarea { font-family: inherit; }
   font-size: 17px;
   color: var(--light-muted);
   font-style: italic;
-  margin-top: 56px;
   padding-top: 40px;
   border-top: 1px solid var(--border);
   max-width: 640px;
@@ -1849,7 +1848,7 @@ input, textarea { font-family: inherit; }
     top: -50px;
     z-index: 1;
 }
-.shift-section { padding: 100px 0; }
+.shift-section { padding: 80px 0; }
 .shift-compare {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1936,7 +1935,7 @@ input, textarea { font-family: inherit; }
    4 · WHO IS THIS FOR — AUDIENCE GRID
    ══════════════════════════════════════════════════════════════ */
 .audience-section {
-  padding: 118px 0 96px;
+  padding: 80px 0;
   position: relative;
   overflow: hidden;
   background:
@@ -2180,7 +2179,7 @@ input, textarea { font-family: inherit; }
 }
 
 
-.outcomes-section { padding: 100px 0; }
+.outcomes-section { padding: 80px 0; }
 .outcomes-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2216,7 +2215,7 @@ input, textarea { font-family: inherit; }
 /* ══════════════════════════════════════════════════════════════
    7 · AGENDA LIST
    ══════════════════════════════════════════════════════════════ */
-.agenda-section { padding: 100px 0; }
+.agenda-section { padding: 80px 0; }
 .agenda-list {
   margin-top: 52px;
   display: flex;
@@ -2675,6 +2674,9 @@ input, textarea { font-family: inherit; }
     }
 }
 @media (max-width: 480px) {
+      .hero_banner_watch_vector {
+        display: none;
+    }
   .agenda-item {
     flex-direction: column;
 }
@@ -2696,7 +2698,7 @@ input, textarea { font-family: inherit; }
         padding: 12px 12px;
     }
     .hero-top .hero-h1 {
-        font-size: 22px;
+        font-size: 26px;
     }
 }
 @media (max-width: 420px) {
