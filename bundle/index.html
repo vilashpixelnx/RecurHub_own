@@ -26,28 +26,30 @@
 <body>
 
   <!-- ── ANNOUNCEMENT BAR ─────────────────────────────────────── -->
-  <div class="announce">
+  <!-- -- ANNOUNCEMENT BAR --------------------------------------- -->
+  <div class="announce" id="offerBar" aria-label="Limited time offer bar">
     <div class="announce-inner">
-        <div>
-      <span class="announce-dot"></span>
-      <span class="announce-text"><strong>Launch Special</strong> - One-time payment ends in</span>
+      <div class="announce-left">
+        <a href="#" class="announce-brand" aria-label="RecurHub">
+          <img src="assets/logo-white.svg" alt="RecurHub" class="announce-logo-inner" loading="lazy">
+        </a>
       </div>
-      <div class="anc-main">
-          <div class="nav-timer-block">
-            <span class="nav-timer-dot"></span>
-            <span class="nav-timer-label">Offer ends in</span>
-            <span class="announce-timer" id="topTimer">00:00:00</span>
-          </div>
-          <div class="nav-actions">
-            <div class="nav-coupon">
-              <span class="nav-coupon-label">Use code</span>
-              <span class="nav-coupon-code">EARLY50</span>
-            </div>
-            <a href="#pricing" class="nav-cta-btn">Get Instant Access →</a>
-          </div>
+      <div class="announce-mid">
+        <span class="announce-title">RecurHub Complete Bundle</span>
+        <span class="announce-text">Everything unlocked in one purchase. No monthly fees, no hidden upgrades.</span>
       </div>
+      <div class="announce-right">
+        <a href="#" class="nav-cta-btn">Claim Instant Access →</a>
       </div>
+       <button type="button" class="announce-toggle" id="offerBarToggle" aria-label="Hide offer bar">
+          <span></span>
+          <span></span>
+        </button>
+    </div>
   </div>
+  <button type="button" class="offer-bar-peek" id="offerBarPeek" aria-label="Show offer bar">
+    <span>Show offer</span>
+  </button>
 <!--<div class="rec-header-wrapper">-->
 <!--    <div class="container">-->
 <!--      <div class="rec-navbar-wrapper">-->
@@ -78,8 +80,7 @@
        1 · HOOK - HERO (with video)
        ══════════════════════════════════════════════════════════ -->
   <section id="hero">
-
-
+ <div class="hero-bg" aria-hidden="true"></div>
     <div class="container hero-inner">
 
       <span class="eyebrow">
@@ -127,8 +128,7 @@
       </div>
        <!-- Hero CTA -->
       <div class="hero-cta-row">
-        <a href="#pricing" class="btn btn-primary btn-lg hero-cta-primary">
-          Yes, I Want Everything for $197 →
+        <a href="#pricing" class="btn btn-primary btn-lg hero-cta-primary">Get Instant Bundle Access - $197
          <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <mask id="mask0_285_29" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="73" height="73">
             <rect x="36.0625" y="72.125" width="51" height="51" transform="rotate(-135 36.0625 72.125)" fill="url(#pattern0_285_29)"/>
@@ -177,12 +177,12 @@
       <div class="inside-grid">
         <div class="inside-card" style="--ic-accent:#771AFF">
           <div class="inside-card-header">
-            <div class="inside-tier-badge" style="background:rgba(119,26,255,0.10);color:#771AFF;border-color:rgba(119,26,255,0.25)">Foundation · $17 value</div>
+            <div class="inside-tier-badge" style="background:rgba(119,26,255,0.10);color:#771AFF;border-color:rgba(119,26,255,0.25)">$17 value</div>
             <h3 class="inside-card-title">RecurHub <span style="color:#771AFF">FE</span></h3>
-            <p class="inside-card-tagline">Launch your first recurring campaign in 9 minutes — no experience needed.</p>
+            <p class="inside-card-tagline">Launch your first recurring campaign in 9 minutes - no experience needed.</p>
           </div>
           <ul class="inside-feat-list">
-            <li><span class="feat-check" style="color:#771AFF">✓</span> AI-powered campaign builder — full copy &amp; pages in one click</li>
+            <li><span class="feat-check" style="color:#771AFF">✓</span> AI-powered campaign builder - full copy &amp; pages in one click</li>
             <li><span class="feat-check" style="color:#771AFF">✓</span> 230+ vetted recurring commission platforms, ready to join</li>
             <li><span class="feat-check" style="color:#771AFF">✓</span> Built-in lead capture pages with one custom domain</li>
             <li><span class="feat-check" style="color:#771AFF">✓</span> Campaign performance analytics dashboard</li>
@@ -191,12 +191,12 @@
 
         <div class="inside-card" style="--ic-accent:#3B82F6">
           <div class="inside-card-header">
-            <div class="inside-tier-badge" style="background:rgba(59,130,246,0.10);color:#3B82F6;border-color:rgba(59,130,246,0.25)">Scale · $47 value</div>
+            <div class="inside-tier-badge" style="background:rgba(59,130,246,0.10);color:#3B82F6;border-color:rgba(59,130,246,0.25)">$47 value</div>
             <h3 class="inside-card-title">RecurHub <span style="color:#3B82F6">Pro</span></h3>
             <p class="inside-card-tagline">Remove every limit. Run unlimited campaigns at full speed.</p>
           </div>
           <ul class="inside-feat-list">
-            <li><span class="feat-check" style="color:#3B82F6">✓</span> Unlimited campaigns, AI generations &amp; lead contacts — no caps</li>
+            <li><span class="feat-check" style="color:#3B82F6">✓</span> Unlimited campaigns, AI generations &amp; lead contacts - no caps</li>
             <li><span class="feat-check" style="color:#3B82F6">✓</span> Exit-intent popup system to recover abandoning visitors</li>
             <li><span class="feat-check" style="color:#3B82F6">✓</span> 5 custom domains + full UTM tracking &amp; attribution</li>
             <li><span class="feat-check" style="color:#3B82F6">✓</span> Priority support queue</li>
@@ -205,9 +205,9 @@
 
         <div class="inside-card" style="--ic-accent:#059669">
           <div class="inside-card-header">
-            <div class="inside-tier-badge" style="background:rgba(16,185,129,0.10);color:#059669;border-color:rgba(16,185,129,0.25)">Intelligence · $67 value</div>
+            <div class="inside-tier-badge" style="background:rgba(16,185,129,0.10);color:#059669;border-color:rgba(16,185,129,0.25)">$67 value</div>
             <h3 class="inside-card-title">RecurHub <span style="color:#059669">PowerPack</span></h3>
-            <p class="inside-card-tagline">Know exactly what's working — and double down on winners.</p>
+            <p class="inside-card-tagline">Know exactly what's working - and double down on winners.</p>
           </div>
           <ul class="inside-feat-list">
             <li><span class="feat-check" style="color:#059669">✓</span> Traffic heatmaps, visitor recordings &amp; A/B split testing</li>
@@ -219,7 +219,7 @@
 
         <div class="inside-card" style="--ic-accent:#EA6C10">
           <div class="inside-card-header">
-            <div class="inside-tier-badge" style="background:rgba(249,115,22,0.10);color:#EA6C10;border-color:rgba(249,115,22,0.25)">Agency · $197 value</div>
+            <div class="inside-tier-badge" style="background:rgba(249,115,22,0.10);color:#EA6C10;border-color:rgba(249,115,22,0.25)"> $197 value</div>
             <h3 class="inside-card-title">RecurHub <span style="color:#EA6C10">Agency</span></h3>
             <p class="inside-card-tagline">White-label the platform. Sell the service. Keep all the profit.</p>
           </div>
@@ -227,7 +227,7 @@
             <li><span class="feat-check" style="color:#EA6C10">✓</span> 10 fully isolated client sub-accounts under your own brand</li>
             <li><span class="feat-check" style="color:#EA6C10">✓</span> Full white-label branding with custom logo &amp; colours</li>
             <li><span class="feat-check" style="color:#EA6C10">✓</span> 20 subdomains + 10 custom client domains</li>
-            <li><span class="feat-check" style="color:#EA6C10">✓</span> Reseller rights — charge clients whatever monthly rate you want</li>
+            <li><span class="feat-check" style="color:#EA6C10">✓</span> Reseller rights - charge clients whatever monthly rate you want</li>
           </ul>
         </div>
 
@@ -240,7 +240,7 @@
   <!-- ══════════════════════════════════════════════════════════
        3 · PROBLEM - The Real Problem (Pain Points)
        ══════════════════════════════════════════════════════════ -->
-  <section class="section" id="problem">
+  <section class="section problem_section" id="problem">
     <div class="container">
       <div class="section-head">
         <span class="section-tag">Why Most Affiliates Never Scale</span>
@@ -686,10 +686,10 @@
 <section class="section " id="demo-video">
     <div class="container">
       <div class="section-head">
-        <span class="section-tag">See It In Action</span>
-        <h2>Watch RecurHub Build a
-<span class="grad-text">Complete Campaign in Minutes.</span></h2>
-        <p class="section-sub">From platform selection to live landing page — everything you need to start earning recurring commissions, done for you inside one dashboard.</p>
+        <span class="section-tag">See Your Complete Workflow</span>
+        <h2>One Interface.
+<span class="grad-text">Complete Control.</span></h2>
+        <p class="section-sub">From discovering platforms to launching campaigns, tracking performance and managing clients  all from a single, clean interface that does the heavy lifting for you.</p>
       </div>
         <div class="hero-video">
           <div class="hero_banner_watch_vector">
@@ -701,6 +701,53 @@
           </div>
         </div>
       </div>
+            <div class="hero-value-strip" aria-label="Bundle savings summary">
+        <div class="hero-value-stat hero-value-stat-old">
+          <span class="hero-value-label">Total if bought separately</span>
+          <span class="hero-value-price hero-value-price-old">$328</span>
+        </div>
+        <div class="hero-value-arrow" aria-hidden="true">&rarr;</div>
+        <div class="hero-value-stat hero-value-stat-new">
+          <div class="hero-value-price-row">
+            <span class="hero-value-price hero-value-price-new">$197</span>
+            <span class="hero-value-save">Save $131</span>
+          </div>
+          <span class="hero-value-note">One-time, today only</span>
+        </div>
+      </div>
+       <!-- Hero CTA -->
+      <div class="hero-cta-row">
+        <a href="#pricing" class="btn btn-primary btn-lg hero-cta-primary">Get Instant Bundle Access - $197
+         <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <mask id="mask0_285_29" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="73" height="73">
+            <rect x="36.0625" y="72.125" width="51" height="51" transform="rotate(-135 36.0625 72.125)" fill="url(#pattern0_285_29)"/>
+            </mask>
+            <g mask="url(#mask0_285_29)">
+            <rect x="36.0625" y="72.125" width="51" height="51" transform="rotate(-135 36.0625 72.125)" fill="#C4C4C4"/>
+            <rect x="36.0625" y="72.125" width="51" height="51" transform="rotate(-135 36.0625 72.125)" fill="url(#paint0_linear_285_29)"/>
+            </g>
+            <defs>
+            <pattern id="pattern0_285_29" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlink:href="#image0_285_29" transform="scale(0.0196078)"/>
+            </pattern>
+            <linearGradient id="paint0_linear_285_29" x1="61.5625" y1="72.125" x2="61.5625" y2="123.125" gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0.94"/>
+            <stop offset="1" stop-color="white"/>
+            </linearGradient>
+            <image id="image0_285_29" width="51" height="51" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+            </defs>
+            </svg>
+        </a>
+      </div>
+        <div class="hero-b-img">
+            <div class="vsl-ng">
+                <img src="assets/ng-light.png" alt="" loading="lazy">
+            </div>
+          <!--<div class="vsl-no"> No Monthly Fees | No Watermarks | 14 Day Money Back </div>-->
+          <div class="vsl-chr-im">
+            <img src="assets/mwc-btn.png" alt="chrome-img" loading="lazy">
+          </div>
+        </div>
 
     </div>
 </section>
@@ -886,7 +933,7 @@
       <div class="section-head">
         <span class="section-tag">The Math That Makes Sense</span>
         <h2>Stop Monthly Payments. <br> <span class="grad-text"> One Price. Forever Access. </span></h2>
-        <p class="section-sub">The average affiliate spends $316+/month stitching together a tool stack that still doesn't talk to itself. RecurHub replaces all of it — one dashboard, one payment, done.</p>
+        <p class="section-sub">The average affiliate spends $316+/month stitching together a tool stack that still doesn't talk to itself. RecurHub replaces all of it - one dashboard, one payment, done.</p>
       </div>
 
       <div class="stack-grid">
@@ -922,12 +969,12 @@
             </div>
           <div class="stack-label"> RecurHub Complete Bundle</div>
           <ul class="stack-list">
-            <li><span>RecurHub FE — Campaign Builder</span><span class="stack-check">✓</span></li>
-            <li><span>RecurHub Pro — Unlimited Everything</span><span class="stack-check">✓</span></li>
-            <li><span>RecurHub PowerPack — Analytics Suite</span><span class="stack-check">✓</span></li>
-            <li><span>RecurHub Agency — White-Label Platform</span><span class="stack-check">✓</span></li>
+            <li><span>RecurHub FE - Campaign Builder</span><span class="stack-check">✓</span></li>
+            <li><span>RecurHub Pro - Unlimited Everything</span><span class="stack-check">✓</span></li>
+            <li><span>RecurHub PowerPack - Analytics Suite</span><span class="stack-check">✓</span></li>
+            <li><span>RecurHub Agency - White-Label Platform</span><span class="stack-check">✓</span></li>
             <li><span>230+ Pre-Vetted Recurring Platforms</span><span class="stack-check">✓</span></li>
-            <li><span>AI Campaign Builder — Built In</span><span class="stack-check">✓</span></li>
+            <li><span>AI Campaign Builder - Built In</span><span class="stack-check">✓</span></li>
           </ul>
           <div class="stack-total stack-total-good">
             <span>Today only</span>
@@ -949,7 +996,7 @@
         <span class="section-tag-premium">Exclusive Bonuses</span>
         <h2 class="h">Order Today & Unlock
         <span class="grad-text">6 Premium Bonuses.</span>Completely Free.</h2>
-        <p class="section-sub">Every bonus is hand-picked to complement RecurHub and accelerate your path to recurring income. Total bonus value: <strong>$582+</strong> — yours free with your order today.</p>
+        <p class="section-sub">Every bonus is hand-picked to complement RecurHub and accelerate your path to recurring income. Total bonus value: <strong>$582+</strong> - yours free with your order today.</p>
       </div>
       <div class="bonus-sect">
           <div class="row">
@@ -960,7 +1007,7 @@
               <h5>BONUS #1</h5>
               <h4>Pixel - Form Builder and Leads Capture WordPress Plugin</h4>
               <p>Build stunning contact forms, landing pages, and lead capture pages with an easy drag-and-drop builder. Comes with ready-made templates, autoresponder integrations, and mobile-responsive designs to help you grow your email list and generate more leads without coding.</p>
-           <div class="bonus-val-tag">$97 Value — Yours FREE</div>
+           <div class="bonus-val-tag">$97 Value - Yours FREE</div>
             </div>
           </div>
         </div>
@@ -972,7 +1019,7 @@
               <h5>BONUS #2</h5>
               <h4>WP Lead Capturing Pages - WordPress Plugin</h4>
               <p>Create high-converting landing pages and opt-in forms in minutes using 50+ pre-made layout templates, customizable designs, and easy drag-and-drop editing. Includes autoresponder integrations and fully responsive layouts to help marketers and businesses generate more leads, grow email lists, and launch campaigns faster.</p>
-           <div class="bonus-val-tag">$97 Value — Yours FREE</div>
+           <div class="bonus-val-tag">$97 Value - Yours FREE</div>
             </div>
           </div>
         </div>
@@ -984,7 +1031,7 @@
               <h5>BONUS #3</h5>
               <h4>Exit Intent Popup WordPress Plugin</h4>
               <p>Recover abandoning visitors with smart exit-intent popups designed to increase conversions, email signups, and sales. Easily create attention-grabbing popups with customizable designs, targeting options, and responsive layouts for better engagement.</p>
-           <div class="bonus-val-tag">$97 Value — Yours FREE</div>
+           <div class="bonus-val-tag">$97 Value - Yours FREE</div>
            </div>
           </div>
         </div>
@@ -996,7 +1043,7 @@
               <h5>BONUS #4</h5>
               <h4>Affiliate Blog WordPress Theme</h4>
               <p>A modern and SEO-friendly WordPress theme built for affiliate marketers, bloggers, and review websites. Features clean layouts, fast loading speed, and conversion-focused design to help increase traffic, clicks, and affiliate earnings.</p>
-            <div class="bonus-val-tag">$97 Value — Yours FREE</div>
+            <div class="bonus-val-tag">$79 Value - Yours FREE</div>
             </div>
           </div>
         </div>
@@ -1008,7 +1055,7 @@
               <h5>BONUS #5</h5>
               <h4>Affiliate Marketing WordPress Theme</h4>
               <p>Launch professional affiliate marketing and JV promotion websites with this highly customizable WordPress theme. Includes landing page sections, lead capture elements, and responsive design to maximize conversions and product promotions.</p>
-            <div class="bonus-val-tag">$97 Value — Yours FREE</div>
+            <div class="bonus-val-tag">$79 Value - Yours FREE</div>
             </div>
           </div>
         </div>
@@ -1020,11 +1067,21 @@
               <h5>BONUS #6</h5>
               <h4>Affiliate Marketing Website Template</h4>
               <p>A clean and conversion-focused HTML template ideal for product reviews, deals, and promotional websites. Designed to help affiliate marketers create engaging websites quickly with responsive layouts and modern UI components.</p>
-           <div class="bonus-val-tag">$97 Value — Yours FREE</div>
+           <div class="bonus-val-tag">$33 Value - Yours FREE</div>
             </div>
           </div>
         </div>
     </div>
+      <div class="bonus-summary" aria-label="Bonus value summary">
+        <div class="bonus-summary-copy">
+          <span class="bonus-summary-kicker">6 Exclusive Bonuses Included</span>
+          <p>Added to your order automatically - no extra cost</p>
+        </div>
+        <div class="bonus-summary-value">
+          <strong>$582+ Total Value</strong>
+          <span>FREE with your order</span>
+        </div>
+      </div>
       </div>
     </div>
   </section>
@@ -1081,8 +1138,8 @@
 
           </ul>
 
-          <a href="#" class="btn btn-primary btn-block btn-xl hero-cta-primary">
-              Get Instant Access - $197
+          <a href="#" class="btn btn-primary btn-block btn-xl hero-cta-primary buy_btn">
+              Get Instant Bundle Access - $197
               <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <mask id="mask0_285_29" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="73" height="73">
                 <rect x="36.0625" y="72.125" width="51" height="51" transform="rotate(-135 36.0625 72.125)" fill="url(#pattern0_285_29)"/>
@@ -1200,7 +1257,7 @@
       <h2 class="final-h">Get the Whole System. <br> <span class="grad-text">Pay Once. Profit Forever.</span></h2>
       <p class="final-sub">The Agency license alone sells for $197. You're getting three more full products - FE, Pro, and PowerPack - plus five exclusive bonuses worth $445, at absolutely no extra cost. This bundle disappears when the launch window closes.</p>
       <a href="#pricing" class="btn btn-primary btn-xl hero-cta-primary">
-       Yes, I Want Everything for $197 →
+       Get Instant Bundle Access - $197
       <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <mask id="mask0_285_29" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="73" height="73">
         <rect x="36.0625" y="72.125" width="51" height="51" transform="rotate(-135 36.0625 72.125)" fill="url(#pattern0_285_29)"/>
@@ -1293,3 +1350,4 @@
   <script src="live.js"></script>
 </body>
 </html>
+

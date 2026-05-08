@@ -48,7 +48,65 @@
     });
   }
 
+  /* ── STICKY OFFER BAR ───────────────────────────────────── */
+  const offerBar = document.getElementById('offerBar');
+  const offerBarToggle = document.getElementById('offerBarToggle');
+  const offerBarPeek = document.getElementById('offerBarPeek');
+  if (offerBar) {
+    let manuallyHidden = false;
+
+    const syncOfferBar = () => {
+      const shouldShow = !manuallyHidden && window.scrollY > 260;
+      offerBar.classList.toggle('is-visible', shouldShow);
+      offerBar.classList.toggle('is-collapsed', manuallyHidden);
+      if (offerBarPeek) {
+        offerBarPeek.classList.toggle('show', manuallyHidden);
+      }
+      if (offerBarToggle) {
+        offerBarToggle.classList.toggle('is-collapsed', manuallyHidden);
+        offerBarToggle.setAttribute('aria-pressed', String(manuallyHidden));
+        offerBarToggle.setAttribute(
+          'aria-label',
+          manuallyHidden ? 'Show offer bar' : 'Hide offer bar'
+        );
+      }
+    };
+
+    const updateOfferBar = () => {
+      syncOfferBar();
+    };
+
+    updateOfferBar();
+    window.addEventListener('scroll', updateOfferBar, { passive: true });
+    window.addEventListener('resize', updateOfferBar);
+
+    if (offerBarToggle) {
+      offerBarToggle.addEventListener('click', () => {
+        manuallyHidden = true;
+        syncOfferBar();
+      });
+    }
+
+    if (offerBarPeek) {
+      offerBarPeek.addEventListener('click', () => {
+        manuallyHidden = false;
+        syncOfferBar();
+      });
+    }
+  }
+
   /* ── FAQ ACCORDION ─────────────────────────────────────── */
+  const buyTarget = document.querySelector('.buy_btn');
+  if (buyTarget) {
+    document.querySelectorAll('.nav-cta-btn, .hero-cta-primary, .buy_btn').forEach(cta => {
+      if (cta === buyTarget) return;
+      cta.addEventListener('click', e => {
+        e.preventDefault();
+        buyTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+  }
+
   const heroStripes = document.getElementById('heroStripes');
   if (heroStripes && !heroStripes.children.length) {
     const stripeCount = 24;
@@ -79,38 +137,6 @@
 
     btn.setAttribute('aria-expanded', 'false');
   });
-
-  /* ── COUNTDOWN TIMER ───────────────────────────────────── */
-  const timerEl = document.getElementById('topTimer');
-  if (timerEl) {
-    const STORAGE_KEY = 'recurhub_launch_end';
-    const HOURS = 47;
-    let endAt = parseInt(localStorage.getItem(STORAGE_KEY), 10);
-    const now = Date.now();
-
-    if (!endAt || isNaN(endAt) || endAt < now) {
-      endAt = now + HOURS * 60 * 60 * 1000;
-      try { localStorage.setItem(STORAGE_KEY, endAt); } catch (_) {}
-    }
-
-    const pad = n => String(n).padStart(2, '0');
-
-    const tick = () => {
-      const diff = Math.max(0, endAt - Date.now());
-      const h = Math.floor(diff / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
-      const s = Math.floor((diff % 60000) / 1000);
-      timerEl.textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;
-    };
-
-    tick();
-   function runTimer() {
-  tick();
-  setTimeout(runTimer, 1000);
-}
-runTimer();
-  }
-
   /* ── SMOOTH SCROLL ─────────────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     const href = link.getAttribute('href');
@@ -139,3 +165,4 @@ runTimer();
   });
 
 })();
+
