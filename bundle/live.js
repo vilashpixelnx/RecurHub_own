@@ -112,10 +112,12 @@
 
         const syncOfferBar = () => {
           const shouldShow = !manuallyHidden && window.scrollY > 260;
+          const bodyOffset = shouldShow ? `${Math.ceil(offerBar.getBoundingClientRect().height)}px` : '0px';
 
           offerBar.classList.toggle("is-visible", shouldShow);
 
           offerBar.classList.toggle("is-collapsed", manuallyHidden);
+          document.body.style.setProperty('--offer-bar-offset', bodyOffset);
 
           if (offerBarPeek) {
             offerBarPeek.classList.toggle("show", manuallyHidden);
