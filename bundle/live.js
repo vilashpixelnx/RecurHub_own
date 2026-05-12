@@ -34,66 +34,135 @@
   }
 
   /* ── STICKY HEADER (NEW) ───────────────────────────────── */
-  const header = document.querySelector(".rec-header-wrapper");
+//   const header = document.querySelector(".rec-header-wrapper");
 
-  if (header) {
-    window.addEventListener("scroll", () => {
-      const scrollTop = window.scrollY;
+//   if (header) {
+//     window.addEventListener("scroll", () => {
+//       const scrollTop = window.scrollY;
 
-      if (scrollTop > 300) {
-        header.classList.add("header-visible");
-      } else {
-        header.classList.remove("header-visible");
-      }
-    });
-  }
+//       if (scrollTop > 300) {
+//         header.classList.add("header-visible");
+//       } else {
+//         header.classList.remove("header-visible");
+//       }
+//     });
+//   }
 
-  /* ── STICKY OFFER BAR ───────────────────────────────────── */
-  const offerBar = document.getElementById('offerBar');
-  const offerBarToggle = document.getElementById('offerBarToggle');
-  const offerBarPeek = document.getElementById('offerBarPeek');
-  if (offerBar) {
-    let manuallyHidden = false;
+//   /* ── STICKY OFFER BAR ───────────────────────────────────── */
+//   const offerBar = document.getElementById('offerBar');
+//   const offerBarToggle = document.getElementById('offerBarToggle');
+//   const offerBarPeek = document.getElementById('offerBarPeek');
+//   if (offerBar) {
+//     let manuallyHidden = false;
 
-    const syncOfferBar = () => {
-      const shouldShow = !manuallyHidden && window.scrollY > 260;
-      offerBar.classList.toggle('is-visible', shouldShow);
-      offerBar.classList.toggle('is-collapsed', manuallyHidden);
-      if (offerBarPeek) {
-        offerBarPeek.classList.toggle('show', manuallyHidden);
-      }
-      if (offerBarToggle) {
-        offerBarToggle.classList.toggle('is-collapsed', manuallyHidden);
-        offerBarToggle.setAttribute('aria-pressed', String(manuallyHidden));
-        offerBarToggle.setAttribute(
-          'aria-label',
-          manuallyHidden ? 'Show offer bar' : 'Hide offer bar'
+//     const syncOfferBar = () => {
+//       const shouldShow = !manuallyHidden && window.scrollY > 260;
+//       const bodyOffset = shouldShow ? `${Math.ceil(offerBar.getBoundingClientRect().height)}px` : '0px';
+
+//       offerBar.classList.toggle('is-visible', shouldShow);
+//       offerBar.classList.toggle('is-collapsed', manuallyHidden);
+//       document.body.style.setProperty('--offer-bar-offset', bodyOffset);
+
+//       if (offerBarPeek) {
+//         offerBarPeek.classList.toggle('show', manuallyHidden);
+//       }
+//       if (offerBarToggle) {
+//         offerBarToggle.classList.toggle('is-collapsed', manuallyHidden);
+//         offerBarToggle.setAttribute('aria-pressed', String(manuallyHidden));
+//         offerBarToggle.setAttribute(
+//           'aria-label',
+//           manuallyHidden ? 'Show offer bar' : 'Hide offer bar'
+//         );
+//       }
+//     };
+
+//     const updateOfferBar = () => {
+//       syncOfferBar();
+//     };
+
+//     updateOfferBar();
+//     window.addEventListener('scroll', updateOfferBar, { passive: true });
+//     window.addEventListener('resize', updateOfferBar);
+
+//     if (offerBarToggle) {
+//       offerBarToggle.addEventListener('click', () => {
+//         manuallyHidden = true;
+//         syncOfferBar();
+//       });
+//     }
+
+//     if (offerBarPeek) {
+//       offerBarPeek.addEventListener('click', () => {
+//         manuallyHidden = false;
+//         syncOfferBar();
+//       });
+//     }
+//   }
+  /* ── STICKY HEADER OPTIMIZED ─────────────────────────── */
+  const offerBar = document.getElementById("offerBar");
+
+        const offerBarToggle = document.getElementById("offerBarToggle");
+
+        const offerBarPeek = document.getElementById("offerBarPeek");
+
+        if (!offerBar) return;
+
+        let manuallyHidden = false;
+        let ticking = false;
+
+        const syncOfferBar = () => {
+          const shouldShow = !manuallyHidden && window.scrollY > 260;
+
+          offerBar.classList.toggle("is-visible", shouldShow);
+
+          offerBar.classList.toggle("is-collapsed", manuallyHidden);
+
+          if (offerBarPeek) {
+            offerBarPeek.classList.toggle("show", manuallyHidden);
+          }
+        };
+
+        syncOfferBar();
+
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (!ticking) {
+              requestAnimationFrame(() => {
+                syncOfferBar();
+
+                ticking = false;
+              });
+
+              ticking = true;
+            }
+          },
+          { passive: true },
         );
-      }
-    };
 
-    const updateOfferBar = () => {
-      syncOfferBar();
-    };
+        if (offerBarToggle) {
+          offerBarToggle.addEventListener(
+            "click",
+            () => {
+              manuallyHidden = true;
 
-    updateOfferBar();
-    window.addEventListener('scroll', updateOfferBar, { passive: true });
-    window.addEventListener('resize', updateOfferBar);
+              syncOfferBar();
+            },
+            { passive: true },
+          );
+        }
 
-    if (offerBarToggle) {
-      offerBarToggle.addEventListener('click', () => {
-        manuallyHidden = true;
-        syncOfferBar();
-      });
-    }
+        if (offerBarPeek) {
+          offerBarPeek.addEventListener(
+            "click",
+            () => {
+              manuallyHidden = false;
 
-    if (offerBarPeek) {
-      offerBarPeek.addEventListener('click', () => {
-        manuallyHidden = false;
-        syncOfferBar();
-      });
-    }
-  }
+              syncOfferBar();
+            },
+            { passive: true },
+          );
+        }
 
   /* ── FAQ ACCORDION ─────────────────────────────────────── */
   const buyTarget = document.querySelector('.buy_btn');
@@ -107,15 +176,21 @@
     });
   }
 
+ /* ── HERO STRIPES ────────────────────────────────────── */
   const heroStripes = document.getElementById('heroStripes');
+
   if (heroStripes && !heroStripes.children.length) {
-    const stripeCount = 24;
-    for (let i = 0; i < stripeCount; i += 1) {
+    const fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < 24; i++) {
       const col = document.createElement('div');
       col.className = 'hero-figma-col';
-      heroStripes.appendChild(col);
+      fragment.appendChild(col);
     }
+
+    heroStripes.appendChild(fragment);
   }
+
 
   document.querySelectorAll('.faq-item').forEach(item => {
     const btn = item.querySelector('.faq-q');

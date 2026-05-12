@@ -320,7 +320,7 @@ input, textarea { font-family: inherit; }
    ══════════════════════════════════════════════════════════════ */
 .hero {
   position: relative;
-  padding: 100px 0 80px;
+  padding: 140px 0 80px;
   overflow: hidden;
   background: url(./assets/bnr-bg.webp);
   background-size: cover;
@@ -371,7 +371,7 @@ input, textarea { font-family: inherit; }
 /* ── Hero top: full-width centered copy ── */
 .hero-top {
     text-align: center;
-    margin: 0 auto ;
+    margin: 0 auto 64px;
     position: relative;
     z-index: 2;
 }
@@ -441,7 +441,7 @@ input, textarea { font-family: inherit; }
   font-size: clamp(14px, 2vw, 19px);
   color: var(--text);
   line-height: 1.72;
-  max-width: 1200px;
+  max-width: 840px;
   margin: 0 auto 32px;
 }
 .hero-trust {
@@ -622,7 +622,7 @@ input, textarea { font-family: inherit; }
     content: '';
     position: absolute;
     inset: -1px;
-   border-radius: 26px;
+   border-radius: 20px;
     padding: 1px;
       border: 2px solid transparent;
     border: 1.5px solid transparent;
@@ -788,9 +788,7 @@ input, textarea { font-family: inherit; }
 
 .form-card-head { margin-bottom: 14px; position: relative; z-index: 1; }
 
-.fc-title span.grad-text{
-    font-size:32px;
-}
+
 
 
 
@@ -2261,9 +2259,7 @@ input, textarea { font-family: inherit; }
   letter-spacing: -0.01em;
 }
 .agenda-content p { font-size: clamp(14px, 3vw, 16px); color: var(--light-muted); line-height: 1.6; }
-.container.hero-trust-container {
-    margin-top: 25px;
-}
+
 /* ══════════════════════════════════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════════════════════════════════ */
@@ -2355,14 +2351,13 @@ input, textarea { font-family: inherit; }
 }
 
 @media (max-width: 991px) {
-  .hero-top .hero-h1 {
-    margin-bottom: 12px;
-    margin-top: 30px;
-}
   .hf-arw { display: none; }
   br{
     display: none;
   }
+  .container.hero-trust-container {
+    padding: 0;
+}
 .wj-embed-wrapper {
     margin: auto;
 }
@@ -2679,26 +2674,6 @@ input, textarea { font-family: inherit; }
     }
 }
 @media (max-width: 480px) {
-  .hero-sub {
-    margin: 0 auto 10px;
-}
-  .container-for-mobile .container-big {
-    margin: 0;
-}
-    .hero-top .hero-h1 {
-
-        margin: 15px 0 10px;
-    }
-      .hero-top {
-        margin-bottom: 0;
-    }
-    .hero-body {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-    .hero-body .form-col {
-        order: -1;
-    }
       .hero_banner_watch_vector {
         display: none;
     }
@@ -2725,13 +2700,8 @@ input, textarea { font-family: inherit; }
     .hero-top .hero-h1 {
         font-size: 26px;
     }
-      .launch-badge {
-    gap: 0px;
-    flex-direction: column;
-}
 }
 @media (max-width: 420px) {
-
 .nav-logo {
     height: 20px;
 }
