@@ -90,7 +90,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  
+
   padding-bottom: var(--offer-bar-offset, 0px);
     transition: padding-bottom 180ms ease;
 }
@@ -1555,7 +1555,7 @@ span.head-box svg {
   color: var(--text-muted);
   font-size: 22px;
   line-height: 1.65;
-  max-width: 948px;
+  max-width: 1028px;
   margin: 0 auto 40px;
 }
 
@@ -5247,7 +5247,7 @@ h5.hf-fade-head {
 
 @media (max-width: 720px) {
   .container {
-    padding: 0 20px;
+    padding: 0 15px;
   }
 
   .section {
@@ -5735,11 +5735,11 @@ h5.hf-fade-head {
     .section-head {
         margin-bottom: 25px;
     }
-    
+
     .stck-outr-icon{
       display:none;
     }
-    
+
     .stack-check {
     max-width: 20px;
 }
@@ -6391,7 +6391,7 @@ h5.hf-fade-head {
     font-size: 60px;
     line-height: 1;
   }
-  
+
    .marketer-card {
     flex: 0 0 calc(33.333% - 18px);
   }
@@ -6422,7 +6422,7 @@ h5.hf-fade-head {
     max-width: 30px;
   }
 
- 
+
 
   .watermark span {
     font-size: 50px;
@@ -6431,7 +6431,7 @@ h5.hf-fade-head {
   .more-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .stck-outr-icon {
     position: absolute;
     right: -17px;
@@ -6450,11 +6450,11 @@ h5.hf-fade-head {
   .marketer-card {
     grid-template-columns: 1fr 1fr;
   }
-  
+
    .marketer-card {
     flex: 0 0 calc(50% - 18px);
   }
-  
+
     .announce-inner {
         display: flex;
         flex-direction: column;
@@ -6463,13 +6463,13 @@ h5.hf-fade-head {
         padding: 16px 16px 14px 58px;
         position: relative;
     }
-    
+
         .announce-left {
         justify-content: center;
         width: auto;
         padding-right: 0;
     }
-    
+
         .announce-mid {
         width: 100%;
         padding: 12px 0;
@@ -6478,12 +6478,12 @@ h5.hf-fade-head {
         border-top: 1px solid rgba(255, 255, 255, 0.08);
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
-    
+
         .announce-right {
         width: 100%;
         justify-content: center;
     }
-    
+
         .announce-toggle {
         width: 36px;
         height: 36px;
@@ -6497,7 +6497,7 @@ h5.hf-fade-head {
 }
 
 @media (max-width: 724px) {
- 
+
 
   #hero .hero-h1 {
     font-size: 50px;
@@ -6529,7 +6529,7 @@ h5.hf-fade-head {
   .qac_card-question {
     font-size: 16px;
   }
-  
+
   .jv_pricing_price {
     font-size: 60px;
 }
@@ -6543,7 +6543,7 @@ h5.hf-fade-head {
         .announce-inner {
         gap: 8px;
     }
-    
+
         .announce {
         left: 10px;
         right: 10px;
@@ -6559,11 +6559,11 @@ h5.hf-fade-head {
         border-radius: 20px;
         position: relative;
     }
-    
+
         .announce-left {
         gap: 10px;
     }
-    
+
     .announce-toggle {
         width: 34px;
         height: 34px;
@@ -6571,14 +6571,14 @@ h5.hf-fade-head {
         top: -11px;
         right: -11px;
     }
-    
+
         .announce {
         left: 10px;
         right: 10px;
         bottom: 10px;
         transform: translate3d(18px, 118%, 0);
     }
-    
+
 }
  @media(max-width:525px){
         br{
@@ -6600,11 +6600,11 @@ h5.hf-fade-head {
     font-size: 11px;
     padding: 6px 10px;
   }
-  
+
   .hero-cta-primary {
       gap:5px
   }
-  
+
   .section-tag {
     font-size: 12px;
     letter-spacing: 0.18em;
@@ -6613,8 +6613,8 @@ h5.hf-fade-head {
 .section {
         padding: 40px 0;
     }
-  
-  
+
+
 }
 
 @media (max-width: 400px) {
