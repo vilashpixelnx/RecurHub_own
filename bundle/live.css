@@ -650,7 +650,7 @@ span.head-box  svg{
 @media (max-width:991px){
     #hero {
     padding: 30px 0 50px;
-    
+
 }
   .offer-close {
       display: flex;
@@ -900,9 +900,10 @@ span.nav-save-text {
   position: relative;
   padding: 60px 0 60px;
   overflow: hidden;
-  /*background:url(./assets/bnrr-bg.webp);*/
+  background:url(./assets/bg-bnr.jpg);
   background-size:cover;
   background-repeat:no-repeat;
+  background-position:center;
 }
 .hero-main-side {
     position: absolute;
@@ -1033,7 +1034,7 @@ span.nav-save-text {
   -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 28%, #000 14%, transparent 76%);
           mask-image: radial-gradient(ellipse 90% 80% at 50% 28%, #000 14%, transparent 76%);
   opacity: 0.08;
-  /*display:none;*/
+  display:none;
 }
 
 
@@ -4090,7 +4091,7 @@ button:focus-visible{
    ══════════════════════════════════════════════════════════ */
 .disclaimer {
   background: #050308;
-  padding: 80px 0 80px;
+  padding: 80px 0 50px;
   border-top: 1px solid var(--border);
   position: relative;
 }
@@ -4612,10 +4613,10 @@ button:focus-visible{
     font-size: 16px;
   }
  .announce-text {
-     font-size: 12.5px; 
+     font-size: 12.5px;
 word-break:break-word;
 line-height:unset;
-    
+
 }
   .announce-right {
     width: 100%;
@@ -4787,7 +4788,7 @@ line-height:unset;
 }
 
 @media (max-width: 480px) {
- 
+
 
   #hero { padding: 20px 0 40px; }
   .hero-value-strip {

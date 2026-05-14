@@ -99,7 +99,7 @@
 //     }
 //   }
   /* ── STICKY HEADER OPTIMIZED ─────────────────────────── */
-  const offerBar = document.getElementById("offerBar");
+   const offerBar = document.getElementById("offerBar");
 
         const offerBarToggle = document.getElementById("offerBarToggle");
 

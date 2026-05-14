@@ -58,7 +58,7 @@ lucide.createIcons();
 
 // ── COUNTDOWN TO CART OPEN — May 5, 2026 · 11:00 AM EST ──
 (function () {
-  const LAUNCH_TS = new Date('2026-05-05T16:00:00Z').getTime(); // 11:00 AM EST = 16:00 UTC
+  const LAUNCH_TS = new Date('2026-05-12T16:00:00Z').getTime(); // 11:00 AM EST = 16:00 UTC
   const root = document.getElementById('countdown');
   if (!root) return;
 
@@ -100,12 +100,12 @@ lucide.createIcons();
 const faqs = [
   { q: 'What is RecurHub?', a: 'RecurHub is an all-in-one affiliate marketing command center purpose-built for promoting recurring-revenue offers. It combines a 5-step campaign builder, drag-drop landing page builder, AI content engine (ads, emails, social posts), lead capture with 13+ autoresponder integrations, and full analytics — all in one dashboard.' },
   { q: 'Who is the target audience?', a: 'Affiliate marketers (beginner to advanced), SaaS offer promoters, digital product sellers, email marketers, and agency owners running affiliate campaigns for clients. Anyone who promotes offers and is tired of juggling 6–10 disconnected tools will buy this instantly.' },
-  { q: 'What are the commission rates?', a: '50% across the Front End, OTO 1, and OTO 2. 40% on OTO 3 (Agency + Reseller) due to its higher price point. Every downsell also pays 50%.' },
+  { q: 'What are the commission rates?', a: '50% across the Front End, OTO 1, and OTO 2 and OTO 3 (Agency + Reseller), and OTO 4.' },
   { q: 'What launch platform is this on?', a: 'RecurHub launches on LaunchPad with standard affiliate cookie tracking, real-time leaderboard, and automatic payouts. Click your affiliate link above to register.' },
-  { q: 'Is there a webinar I can promote?', a: 'Yes — a live webinar runs on May 5 at 10:00 AM EST, one hour before cart open. Webinar attendees convert at significantly higher rates, so build your pre-launch emails around it. Registration link is in the JV Doc.' },
-  { q: 'When does the cart close?', a: 'The cart closes on May 10, 2026 at 11:59 PM EST. Use scarcity in your final 48-hour emails — closing-day push consistently drives 30–40% of total commissions.' },
-  { q: 'What marketing materials are available?', a: 'Full JV Doc, 5 email swipe variations (curiosity, benefit, story, urgency, proof), social media copy for 4 platforms, banner ads (728×90, 300×250, 160×600), and a screen-recorded demo video. All linked in the resources section above.' },
-  { q: 'How do I contact the JV team?', a: 'Reach out to Vivek Gour directly via Microsoft Teams, Facebook, or WhatsApp — details in the Connect section above. Happy to jump on a call to help you plan your promo.' },
+  { q: 'Is there a webinar I can promote?', a: 'Yes — a live webinar runs on May 12 at 10:00 AM EST, one hour before cart open. Webinar attendees convert at significantly higher rates, so build your pre-launch emails around it. Registration link is in the JV Doc.' },
+  { q: 'When does the cart close?', a: 'The cart closes on May 17, 2026 at 11:59 PM EST. Use scarcity in your final 48-hour emails — closing-day push consistently drives 50% of total commissions.' },
+//   { q: 'What marketing materials are available?', a: 'Full JV Doc, 5 email swipe variations (curiosity, benefit, story, urgency, proof), social media copy for 4 platforms, banner ads (728×90, 300×250, 160×600), and a screen-recorded demo video. All linked in the resources section above.' },
+  { q: 'How do I contact the JV team?', a: 'Reach out to Himanshu Mehta directly via Microsoft Teams, Facebook, or WhatsApp — details in the Connect section above. Happy to jump on a call to help you plan your promo.' },
 ];
 
 const faqList = document.getElementById('faq-list');
